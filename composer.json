@@ -28,18 +28,7 @@
     }
   ],
 
- "require": {
-    "davidwarneraus3131/core": "dev-main"
-  },
-  "repositories": [
-    {
-      "type": "vcs",
-      "url": "https://github.com/davidwarneraus3131/core"
-    }
-  ],
-  "minimum-stability": "dev",
-  "prefer-stable": true
-
+ 
 
   
   "require": {
