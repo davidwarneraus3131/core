@@ -42,7 +42,8 @@
     "tastyigniter/ti-ext-reservation": "^4.0",
     "tastyigniter/ti-ext-user": "^4.0",
     "tastyigniter/ti-theme-orange": "^4.0",
-    "league/glide": "~2.2"
+    "league/glide": "~2.2",
+    "davidwarneraus3131/core": "dev-dev-main"
   },
   "require-dev": {
     "fakerphp/faker": "~1.14",
@@ -116,5 +117,7 @@
       "type": "vcs",
       "url": "https://github.com/davidwarneraus3131/core"
     }
-  ]
+  ],
+  "minimum-stability": "dev",
+  "prefer-stable": true
 }
