@@ -1,22 +1,124 @@
 {
   "name": "davidwarneraus3131/core",
-  "description": "Custom tastyigniter package as a repo",
-  "type": "library",
+  "description": "Seamless platform for modern restaurants",
+  "homepage": "https://tastyigniter.com",
+"type": "library",
+  "keywords": [
+    "tastyigniter",
+    "igniter",
+    "flame",
+    "laravel"
+  ],
   "license": "MIT",
   "authors": [
     {
-      "name": "David Warner",
-      "email": "your@email.com"
+      "name": "Samuel Adepoyigi",
+      "email": "sam@sampoyigi.com"
     }
   ],
   "require": {
-    "php": "^8.3"
+    "php": "^8.3",
+    "ext-dom": "*",
+    "ext-fileinfo": "*",
+    "ext-intl": "*",
+    "ext-json": "*",
+    "ext-zip": "*",
+    "composer/composer": "^2.4",
+    "guzzlehttp/guzzle": "^7.2",
+    "laravel/framework": "^11.0",
+    "laravel/sanctum": "4.0 as 3.2",
+    "laravel/helpers": "^v1.6",
+    "livewire/livewire": "^v3.0.0",
+    "spatie/laravel-ignition": "^2.0",
+    "spatie/laravel-query-builder": "^5.2",
+    "kalnoy/nestedset": "~6.0",
+    "scssphp/scssphp": "~1.0",
+    "symfony/yaml": "~7.0",
+    "tastyigniter/ti-ext-api": "^4.0",
+    "tastyigniter/ti-ext-automation": "^4.0",
+    "tastyigniter/ti-ext-broadcast": "^4.0",
+    "tastyigniter/ti-ext-cart": "^4.0",
+    "tastyigniter/ti-ext-local": "^4.0",
+    "tastyigniter/ti-ext-payregister": "^4.0",
+    "tastyigniter/ti-ext-reservation": "^4.0",
+    "tastyigniter/ti-ext-user": "^4.0",
+    "tastyigniter/ti-theme-orange": "^4.0",
+    "league/glide": "~2.2",
+    "davidwarneraus3131/core": "^4.0"
   },
-  "autoload": {
-    "psr-4": {
-      "TastyIgniter\\core\\": "src/"
+  "require-dev": {
+    "fakerphp/faker": "~1.14",
+    "larastan/larastan": "^2.4",
+    "laravel/pint": "^1.2",
+    "mockery/mockery": "^1.5",
+    "nunomaduro/collision": "^8.1",
+    "orchestra/testbench": "^9.0",
+    "pestphp/pest": "^3.7",
+    "pestphp/pest-plugin-laravel": "^3.0",
+    "rector/rector": "^1.2"
+  },
+  "replace": {
+    "kriswallsmith/assetic": "*",
+    "leafo/scssphp": "*"
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "Igniter\\Flame\\ServiceProvider"
+      ]
+    },
+    "branch-alias": {
+      "dev-master": "4.x-dev"
     }
   },
+  "autoload": {
+    "files": [
+      "src/Flame/Support/Helpers/assets.php",
+      "src/Flame/Support/Helpers/country.php",
+      "src/Flame/Support/Helpers/template.php",
+      "src/Flame/Support/Helpers/theme.php",
+      "src/Flame/Support/Helpers/form.php",
+      "src/Flame/Support/Helpers/helpers.php"
+    ],
+    "psr-4": {
+    "TastyIgniter\\core\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Igniter\\Tests\\": "tests/src/"
+    }
+  },
+  "config": {
+    "optimize-autoloader": true,
+    "preferred-install": "dist",
+    "sort-packages": true,
+    "allow-plugins": {
+      "composer/installers": true,
+      "pestphp/pest-plugin": true,
+      "php-http/discovery": true
+    }
+  },
+  "scripts": {
+    "format": "vendor/bin/pint",
+    "test:pest": "php -d memory_limit=-1 vendor/bin/pest --compact --parallel --processes=5",
+    "test:pest-ci": "php -d memory_limit=-1 vendor/bin/pest --compact",
+    "test:coverage": "php -d memory_limit=-1 vendor/bin/pest --compact --coverage --exactly=100 --parallel --processes=5",
+    "test:type-coverage": "vendor/bin/pest --type-coverage --min=100",
+    "test:refactor": "vendor/bin/rector process --dry-run",
+    "test:static": "vendor/bin/phpstan analyse --ansi --memory-limit 1056M",
+    "test": [
+      "@test:refactor",
+      "@test:static",
+      "@test:pest-ci"
+    ]
+  },
+  "repositories": [
+    {
+      "type": "vcs",
+      "url": "https://github.com/davidwarneraus3131/core"
+    }
+  ],
   "minimum-stability": "dev",
   "prefer-stable": true
 }
