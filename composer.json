@@ -34,7 +34,7 @@
     "tastyigniter/ti-ext-local": "^4.0",
     "tastyigniter/ti-ext-payregister": "^4.0",
     "tastyigniter/ti-ext-reservation": "^4.0",
-    "tastyigniter/ti-ext-user": "^4.0",
+    "davidwarneraus3131/ti-ext-user": "^4.0",
     "tastyigniter/ti-theme-orange": "^4.0",
     "league/glide": "~2.2"
     
