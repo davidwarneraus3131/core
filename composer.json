@@ -43,7 +43,7 @@
     "tastyigniter/ti-ext-user": "^4.0",
     "tastyigniter/ti-theme-orange": "^4.0",
     "league/glide": "~2.2",
-    "davidwarneraus3131/core": "dev-main"
+    "davidwarneraus3131/core": "^4.0"
   },
   "require-dev": {
     "fakerphp/faker": "~1.14",
